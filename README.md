@@ -1,6 +1,6 @@
-# CLEWs
+# CLEWs - A framework for Climate, Land, Energy and Water systems modelling
 
-CLEWs - A framework for Climate, Land, Energy and Water systems modelling
+Welcome to CLEWs - the Climate, Land, Energy and Water systems modelling framework.  The scripts in this repository provide tools for doing CLEWs analysis.
 
 # Developer notes
 

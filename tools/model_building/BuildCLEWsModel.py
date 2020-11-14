@@ -433,6 +433,8 @@ def BuildCLEWsModel(data):
                         "LNDAGR" + LandRegion + "C" + EvapotranspirationClusters[clustercount].split(',')[0].zfill(2),
                         "WTRSUR" + LandRegion, OARList, g = str(mode + 1), v = str(RunoffValue))
 
+    # Need a new for loop so we don't add the IAR values for the last few modes to the IAR and OAR above...
+    for LandRegion in LandRegions:
         # ADD LAST FEW MODES, AND IAR FOR THEM IN LNDAGR technologies
         for LandUseCode, LandUse in LandUseCodes.items():
             if LandUse in ModeList:

@@ -1,0 +1,32 @@
+name: clewsy_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ca-certificates=2020.12.5=h5b45459_0
+  - certifi=2020.12.5=py37h03978a9_1
+  - intel-openmp=2020.3=h57928b3_311
+  - libblas=3.9.0=7_mkl
+  - libcblas=3.9.0=7_mkl
+  - liblapack=3.9.0=7_mkl
+  - mkl=2020.4=hb70f87d_311
+  - numpy=1.19.5=py37hd20adf4_1
+  - openssl=1.1.1i=h8ffe710_0
+  - pip=20.3.3=pyhd8ed1ab_0
+  - python=3.7.9=h7840368_0_cpython
+  - python-dateutil=2.8.1=py_0
+  - python_abi=3.7=1_cp37m
+  - pytz=2020.5=pyhd8ed1ab_0
+  - setuptools=49.6.0=py37h03978a9_3
+  - six=1.15.0=pyh9f0ad1d_0
+  - sqlite=3.34.0=h8ffe710_0
+  - vc=14.2=hb210afc_2
+  - vs2015_runtime=14.28.29325=h5e1d092_0
+  - wheel=0.36.2=pyhd3deb0d_0
+  - wincertstore=0.2=py37h03978a9_1006
+  - pip:
+    - clewsy==0.2
+    - colorama==0.4.4
+    - pymongo==3.11.2
+    - pyyaml==5.3.1
+prefix: C:\Users\abhis\.conda\envs\clewsy_env

@@ -1,0 +1,18 @@
+code,description,name
+LC0,Water,Water bodies
+LC1,Evergreen Needleleage Forest,Forests
+LC2,Evergreen Broadleaf Forest,Forests
+LC3,Deciduous Needleleaf Forest,Forests
+LC4,Deciduous Broadleaf Forest,Forests
+LC5,Mixed Forests,Forests
+LC6,Closed Shrublands,Grassland & Woodland
+LC7,Open Shrublands,Grassland & Woodland
+LC8,Woody Savannas,Grassland & Woodland
+LC9,Savannas,Grassland & Woodland
+LC10,Grasslands,Grassland & Woodland
+LC11,Permanent Wetlands,Grassland & Woodland
+LC12,Croplands,Cropland
+LC13,Urban and Built-up,Built-up land
+LC14,Cropland/Natural Vegetation Mosaic,Cropland
+LC15,Snow and Ice,Barren land
+LC16,Barren or Sparsely Vegetated,Barren land

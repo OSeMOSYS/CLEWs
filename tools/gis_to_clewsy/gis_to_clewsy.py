@@ -2,10 +2,27 @@ import os, sys
 import pandas as pd
 pd.options.mode.chained_assignment = None  # default='warn'
 import numpy as np
+import yaml
 
 
 country = 'mng'
 national_level = False
+
+def crop_grouping(df):
+    crop_group = pd.read_csv('crop_groups.csv').fillna('')
+    crop_dict = dict((k,v) 
+                     for k, v in
+                     zip(crop_group.crop, 
+                         crop_group.group)
+                     )
+    for each_crop in crop_dict.keys():
+        if crop_dict[each_crop] == '':
+            crop_dict[each_crop] = each_crop
+    
+    df['crop'].replace(crop_dict, 
+                       inplace=True)
+    
+    return df
 
 
 lc_codes = pd.read_csv(r'lc_codes.csv')
@@ -130,12 +147,23 @@ for each_param in ['water_supply', 'input_level']:
     df_param[each_param].replace(param_dict, 
                                  inplace=True)
 
+## Group crops base on user-defined crop grouping
+df_param['crop'] = df_param['crop'].str.upper()
+df_param = crop_grouping(df_param)
+df_param = df_param.groupby(['region_code',
+                             'param',
+                             'crop',
+                             'water_supply',
+                             'input_level'],
+                            as_index=False)['value'].mean()
 
-df_param['crop_ws_input'] = (df_param['crop'].str.upper() + 
+## Create column with crop combo e.g. WHE Irrigated High
+df_param['crop_ws_input'] = (df_param['crop'] + 
                              ' ' +
                              df_param['water_supply'] + 
                              ' ' +
                              df_param['input_level'])
+
 
 for each_param in df_param['param'].unique():
     if each_param == 'yld':
@@ -211,7 +239,3 @@ for each_region in df_yld['region_code'].unique():
         df_water['cluster'] = np.arange(len(df_water)) + 1
         df_water.to_csv(path_lc_out_region,
                           index=None)
-        
-
-
-

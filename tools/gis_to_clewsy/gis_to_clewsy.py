@@ -5,7 +5,7 @@ import numpy as np
 import yaml
 
 
-country = 'mng'
+country = 'btn'
 national_level = False
 
 def crop_grouping(df):
@@ -175,7 +175,9 @@ for each_param in df_param['param'].unique():
                      'value'] = df_param.loc[df_param['param'].isin([each_param]),
                                              'value'].div(1000)
 
-df_param = df_param.pivot(index=['region_code', 'param'],
+df_param = pd.pivot_table(df_param,
+                          index=['region_code',
+                                 'param'],
                           columns='crop_ws_input',
                           values='value').reset_index()
 

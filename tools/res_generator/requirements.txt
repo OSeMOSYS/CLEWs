@@ -1,6 +1,6 @@
 amply==0.1.4
 appdirs==1.4.3
-certifi==2020.12.5
+certifi==2022.12.7
 distlib==0.3.0
 graphviz==0.16
 numpy==1.19.5
